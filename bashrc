@@ -27,16 +27,17 @@ PS1='\e[31;1m\][\e[34;1m\]\u@\h: \e[30;1m\]\W\e[31;1m\]] \e[37;0m\]\$ '
 
 
 ### Aliases ###
+
 # ls aliases
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias lla='ls -Alh'
-alias lt='ll -t'
+alias ls='ls -lh --color=auto'
+#alias ll='ls -lh'
+alias la='ls -Alh'
+#alias lt='ll -t'
 
 # Confirm before overwriting something 
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+#alias rm='rm -i' // Disabled it because of always prompting for every files or directories inside.
 
 # Custom colorize output
 alias grep='grep --color=auto'
