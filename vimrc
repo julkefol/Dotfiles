@@ -40,10 +40,10 @@ set cindent
 
 " Set custom colorscheme.
 colorscheme ayu
-let ayucolor="light"
+let ayucolor="dark"
 
 " Set background color.
-set background=light
+"set background=light
 
 " Convert tabs to spaces.
 "set expandtab
@@ -118,7 +118,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-			\ 'colorscheme': 'ayu_light',
+			\ 'colorscheme': 'ayu_dark',
 			\}
 "[END]
 
