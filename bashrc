@@ -20,40 +20,40 @@
 #PS1='[\u@\h: \W]\$ '
 
 #Dark
-PS1='\e[33;1m\][\e[32;1m\]\u@\h: \e[34;1m\]\W\e[33;1m\]] \e[37;0m\]\$ '
+#PS1='\e[33;1m\][\e[32;1m\]\u@\h: \e[34;1m\]\W\e[33;1m\]] \e[37;0m\]\$ '
 
 #Light
 #PS1='\e[31;1m\][\e[34;1m\]\u@\h: \e[30;1m\]\W\e[31;1m\]] \e[37;0m\]\$ '
+PS1='\e[31;1m\][\e[34;1m\]\u\e[32;1m@\e[35;1m\]\h\e[30;1m\]: \e[30;1m\]\W\e[31;1m\]] \e[37;0m\]\$ '
 
 
 ### Aliases ###
 
 # ls aliases
 alias ls='ls -lh --color=auto'
-#alias ll='ls -lh'
 alias la='ls -Alh'
-#alias lt='ll -t'
 
-# Confirm before overwriting something 
-alias cp='cp -i'
-alias mv='mv -i'
-#alias rm='rm -i' // Disabled it because of always prompting for every files or directories inside.
+# Confirm before overwriting something and adding verbose
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias mkdir='mkdir -v'
+alias rm='rm -v'
+#alias rm='rm -i' # Disabled it because of always prompting for every files or directories inside.
 
 # Custom colorize output
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
-# pacman and paru 
-#alias updatepkg='sudo pacman -Syu'
-#alias searchpkg='pacman -Ss'
-#alias installpkg='sudo pacman -S'
+# Paru
 alias aurchekup='paru -Qua'
 alias aurpkgup='paru -Sua'
 alias aursearch='paru -Ss'
 
+# Others
+alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
-alias torb='cd Downloads/tor-browser_en-US/; ./start-tor-browser.desktop'
+alias torbrowser='cd Downloads/tor-browser_en-US/; ./start-tor-browser.desktop'
 
 # Auto 'cd' when entering just a path
 #shopt -s autocd
