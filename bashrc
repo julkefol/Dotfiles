@@ -7,11 +7,11 @@
 
 ### Color codes for PS1 ###
 # Black: 30
-# Blue: 34
-# Cyan: 36
-# Green: 32
-# Purple: 35
-# Red: 31
+# Blue: 34   L-#5454ff
+# Cyan: 36   L-#41c8c8
+# Green: 32  L-#277527
+# Purple: 35 L-#763bb0
+# Red: 31    L-#ff5454
 # White: 37
 # Yellow: 33
 
