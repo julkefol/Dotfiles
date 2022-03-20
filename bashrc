@@ -1,30 +1,23 @@
-#
 # ~/.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 ### Color codes for PS1 ###
-# Black: 30
-# Blue: 34   L-#5454ff
-# Cyan: 36   L-#41c8c8
-# Green: 32  L-#277527
-# Purple: 35 L-#763bb0
-# Red: 31    L-#ff5454
-# White: 37
-# Yellow: 33
-
-
-#Default
-#PS1='[\u@\h: \W]\$ '
+# 30: Black
+# 31: Red 		L-#ff5454
+# 32: Green 	L-#277527
+# 33: Yellow 	L-
+# 34: Blue 		L-#5454ff
+# 35: Purple 	L-#763bb0
+# 36: Cyan 		L-#41c8c8
+# 37: White/Light-gray
 
 #Dark
 #PS1='\e[33;1m\][\e[32;1m\]\u@\h: \e[34;1m\]\W\e[33;1m\]] \e[37;0m\]\$ '
 
 #Light
-#PS1='\e[31;1m\][\e[34;1m\]\u@\h: \e[30;1m\]\W\e[31;1m\]] \e[37;0m\]\$ '
-PS1='\e[31;1m\][\e[34;1m\]\u\e[32;1m@\e[35;1m\]\h\e[30;1m\]: \e[30;1m\]\W\e[31;1m\]] \e[37;0m\]\$ '
+PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;34m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;30m\]: \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\] \$ '
 
 
 ### Aliases ###
@@ -53,7 +46,7 @@ alias aursearch='paru -Ss'
 alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
-alias torbrowser='cd Downloads/tor-browser_en-US/; ./start-tor-browser.desktop'
+alias torbrowser='cd ~/Downloads/tor-browser_en-US/; ./start-tor-browser.desktop; cd -'
 
 # Auto 'cd' when entering just a path
 #shopt -s autocd
