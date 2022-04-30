@@ -6,5 +6,5 @@ user_pref("keyword.enabled", true);
 //user_pref("browser.urlbar.suggest.searches", true);
 user_pref("browser.download.useDownloadDir", true);
 user_pref("browser.uidensity", 1);
-user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
-user_pref("dom.event.clipboardevents.enabled", false); //Disable JS access to clipboard
+//user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
+//user_pref("dom.event.clipboardevents.enabled", false); //Disable JS access to clipboard
