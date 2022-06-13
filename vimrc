@@ -6,6 +6,48 @@
 "                 █ █  █ █ █ █     █ █    █ █ █_█ █ █  █ █   █ █  █ ██ ███                "
 "                 █_█   ██_██    █_█_█_█  █_█     █_█  █_█   █_█  █_██_██                 "
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
+"
+
+
+" COLOR SECTION {
+    " *) True color- {ayu, onhalf, jellybeans, badwolf}
+    " *) Non-true color- {xcodelight, soda}
+    
+    " Set colorscheme 
+    colorscheme badwolf
+    
+    "Ayu darker 
+    "let ayecolor="dark"
+     
+    " BADWOLF COLOR CONFIG {
+        " Make the gutters darker than the background.
+        let g:badwolf_darkgutter = 1
+
+        " Make the tab line lighter than the background.
+        let g:badwolf_tabline = 2
+
+    " }
+
+    " Set background color.
+    "set background=dark
+    
+    " Enable 23-bit true color.
+    set termguicolors
+    
+    " LIGHT LINE CONFIG {
+        set laststatus=2
+        
+        if !has('gui_running') 
+	        set t_Co=256
+        endif
+        
+        let g:lightline = {
+			        \ 'colorscheme': 'default',
+			        \}
+    " }
+
+" }
+
 
 
 
@@ -38,15 +80,8 @@ filetype plugin indent on
 " Smart indentation for C-like language.
 set cindent
 
-" Set custom colorscheme.
-colorscheme ayu
-let ayucolor="dark"
-
-" Set background color.
-"set background=light
-
 " Convert tabs to spaces.
-"set expandtab
+set expandtab
 
 " Set the character encoding.
 set encoding=UTF-8
@@ -66,8 +101,6 @@ set incsearch
 " Enable search highlighting for specific string.
 set hlsearch
 
-" Enable 23-bit true color.
-set termguicolors
 
 " Visual autocomplete for command menu.
 set wildmenu
@@ -81,18 +114,17 @@ set spell
 " Set mouse support 
 "set mouse=n
 
-" """"""""""""""""""""""""""""""""""""""""""""Plugins""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS {
+    call plug#begin('~/.vim/plugged')
 
-call plug#begin('~/.vim/plugged')
+	    Plug 'scrooloose/syntastic'				"Linter or code checker for vim.
+	    Plug 'jiangmiao/auto-pairs'             "Automatically pair brackets when typing
+	    Plug 'ervandew/supertab'                "Auto completion tool to complete code by pressing TAB
+	    Plug 'itchyny/lightline.vim' 			"Statusline plugin.
 
-	Plug 'scrooloose/syntastic'				"Linter or code checker for vim.
-	Plug 'jiangmiao/auto-pairs'             "Automatically pair brackets when typing
-	Plug 'ervandew/supertab'                "Auto completion tool to complete code by pressing TAB
-	Plug 'itchyny/lightline.vim' 			"Statusline plugin.
+    call plug#end()
+" }
 
-call plug#end()
-
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Templates config [START]
 autocmd BufNewFile *.c 0r ~/.vim/templates/C.c
@@ -110,25 +142,3 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 "[END]
 
-"Lightline configuration [START]
-set laststatus=2
-
-if !has('gui_running') 
-	set t_Co=256
-endif
-
-let g:lightline = {
-			\ 'colorscheme': 'ayu_dark',
-			\}
-"[END]
-
-
-
-
-
-
-
-
-
-" 1) Colors that need true color- {ayu, onhalf, jellybeans}
-" 2) Colors that don't need true color- {xcodelight, soda}
