@@ -1,54 +1,41 @@
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-"                     █ █   █ █  █ █ █ █  █ ██   ██ █  █ ███ █_   █ ██ ██                 "
-"                     █ █   █ █    █ █    █ ███ ███ █  █ █   █ █  █ ██ ███                "
-"                     █ █   █ █    █ █    █ ███████ █  █ █   █ █  █ █                     "
-"                  _  █ ██ ██ █    █ █    █ ██ █ ██ █  █ ██ █ █   █ █                     "
-"                 █ █  █ █ █ █     █ █    █ █ █_█ █ █  █ █   █ █  █ ██ ███                "
-"                 █_█   ██_██    █_█_█_█  █_█     █_█  █_█   █_█  █_██_██                 "
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-"
+"                     █ █   █ █  █ █ █ █  █ ██   ██ █  █ ███ █_   █ ██ ██                 
+"                     █ █   █ █    █ █    █ ███ ███ █  █ █   █ █  █ ██ ███                
+"                     █ █   █ █    █ █    █ ███████ █  █ █   █ █  █ █                     
+"                  _  █ ██ ██ █    █ █    █ ██ █ ██ █  █ ██ █ █   █ █                     
+"                 █ █  █ █ █ █     █ █    █ █ █_█ █ █  █ █   █ █  █ ██ ███                
+"                 █_█   ██_██    █_█_█_█  █_█     █_█  █_█   █_█  █_██_██                 
+" ----------------------------------------------------------------------------------------
 
+" Gruvbox specific configs
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_termcolors = 256
+let g:gruvbox_bold = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_underline = 1
+let g:gruvbox_number_column = 'bg0' 
+let g:gruvbox_italicize_comments = 1
+let g:gruvbox_hls_cursor = 'purple'
+let g:gruvbox_vert_split = 'bg1'
 
-" COLOR SECTION {
-    " *) True color- {ayu, onhalf, jellybeans, badwolf}
-    " *) Non-true color- {xcodelight, soda}
+" Set colorscheme 
+colorscheme gruvbox
     
-    " Set colorscheme 
-    colorscheme badwolf
+" Set background color.
+set background=dark
     
-    "Ayu darker 
-    "let ayecolor="dark"
-     
-    " BADWOLF COLOR CONFIG {
-        " Make the gutters darker than the background.
-        let g:badwolf_darkgutter = 1
-
-        " Make the tab line lighter than the background.
-        let g:badwolf_tabline = 2
-
-    " }
-
-    " Set background color.
-    "set background=dark
+" Enable 23-bit true color.
+set termguicolors
     
-    " Enable 23-bit true color.
-    set termguicolors
-    
-    " LIGHT LINE CONFIG {
-        set laststatus=2
-        
-        if !has('gui_running') 
-	        set t_Co=256
-        endif
-        
-        let g:lightline = {
-			        \ 'colorscheme': 'default',
-			        \}
-    " }
+" Lightline specific config
+set laststatus=2
 
-" }
+if !has('gui_running') 
+    set t_Co=256
+endif
 
-
+let g:lightline = {
+	        \ 'colorscheme': 'gruvbox',
+	        \}
 
 
 " Display numbers to the line and relative to other lines.
@@ -101,7 +88,6 @@ set incsearch
 " Enable search highlighting for specific string.
 set hlsearch
 
-
 " Visual autocomplete for command menu.
 set wildmenu
 
@@ -114,31 +100,29 @@ set spell
 " Set mouse support 
 "set mouse=n
 
-" PLUGINS {
-    call plug#begin('~/.vim/plugged')
+" PLUGINS
+call plug#begin('~/.vim/plugged')
 
-	    Plug 'scrooloose/syntastic'				"Linter or code checker for vim.
-	    Plug 'jiangmiao/auto-pairs'             "Automatically pair brackets when typing
-	    Plug 'ervandew/supertab'                "Auto completion tool to complete code by pressing TAB
-	    Plug 'itchyny/lightline.vim' 			"Statusline plugin.
+    Plug 'scrooloose/syntastic'				" Linter or code checker for vim.
+    Plug 'jiangmiao/auto-pairs'             " Automatically pair brackets when typing
+    Plug 'ervandew/supertab'                " Auto completion tool to complete code by pressing TAB
+    Plug 'itchyny/lightline.vim' 			" Statusline plugin.
+    Plug 'morhetz/gruvbox'                  " Gruvbox color
+call plug#end()
 
-    call plug#end()
-" }
 
-
-" Templates config [START]
+" Template configs
 autocmd BufNewFile *.c 0r ~/.vim/templates/C.c
 autocmd BufWinEnter *.c call cursor(4,1)
-"[END]
 
-"Recommended setting for Syntastic [START]
+"Recommended setting for Syntastic 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"[END]
 
+" Set gruvbox color
+"autocmd vimenter * ++nested colorscheme gruvbox
