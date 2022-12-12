@@ -100,7 +100,7 @@ set spell
 " Set mouse support 
 "set mouse=n
 
-" PLUGINS
+" PLUGINS -- Vim-plug
 call plug#begin('~/.vim/plugged')
 
     Plug 'scrooloose/syntastic'				" Linter or code checker for vim.

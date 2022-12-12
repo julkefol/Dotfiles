@@ -22,7 +22,6 @@ PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[
 export EDITOR="vim"
 export VISUAL="vim"
 
-
 ### Aliases ###
 
 # ls aliases
@@ -40,20 +39,17 @@ alias rm='rm -v'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 
-# Paru
-alias aurchekup='paru -Qua'
-alias aurpkgup='paru -Sua'
-alias aursearch='paru -Ss'
-
 # Others
 alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
-alias torbrowser='cd ~/Downloads/tor-browser_en-US/; ./start-tor-browser.desktop; cd -'
-alias yt-dl='youtube-dl'
+alias :q='exit'
 
 # Auto 'cd' when entering just a path
 #shopt -s autocd
+
+# Enable vim keybinding for bash
+set -o vi
 
 # Completion for commands
 complete -c man which
