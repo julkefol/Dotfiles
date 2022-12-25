@@ -1,0 +1,12 @@
+# Modifier key ('Mod1' for 'Alt')
+set $mod Mod4
+
+# Home row direction key, like vim
+set $up k
+set $down j
+set $right l
+set $left h
+
+# Terminal emulator
+set $term foot
+

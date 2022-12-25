@@ -1,0 +1,27 @@
+# Set font
+font pango: JetBrainsMono Nerd Font Mono Medium 10
+
+# Gaps config
+gaps inner 3
+gaps outer 3
+
+# Border config <normal|none|pixel>
+default_border pixel 2
+default_floating_border pixel 2
+
+# Title bar name alignment (disabled for default workspace layout)
+title_align center 
+
+# Title bar and window border color
+# Property_name             Title_border    Title_bg    Title_txt   Indicator   Child-border
+client.focused              #EBDBB2         #EBDBB2     #458588     #ebd18f     #EBDBB2 
+client.focused_inactive     #d79921         #d79921     #ffffff     #ffea00     #d79921
+client.focused_tab_title    #ff7bbb         #4a73de     #ffffff     #ffea00     #8dff69
+client.unfocused            #ffffff         #ffffff     #282828     #282828     #ffffff
+client.urgent               #cc241d         #cc241d     #ffffff     #ad0700     #cc241d
+
+#xwayland disable
+
+# How windows should be arranged on a workspace <default|stacking|tabbed>
+workspace_layout default
+default_orientation vertical
