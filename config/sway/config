@@ -1,3 +1,6 @@
+# Clipman clipboard manager
+exec wl-paste -t text --watch clipman store --no-persist
+
 # Copy this to ~/.config/sway/config and edit it to your liking.
 # Read `man 5 sway` for a complete reference.
 include ~/.config/sway/variables
@@ -12,7 +15,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg ~/Downloads/gruvbox-lake.png fill
+output * bg ~/Pictures/wallpapers/forest_fog_tree1.jpg fill
 
 #
 # Example configuration:
@@ -194,8 +197,7 @@ bar {
     swaybar_command waybar 
 }
 
-# Set gtk theme
-set $gnome-schema org.gnome.desktop.interface
+
 
 # seat seat0 xcursor_theme 'Adwaita' 36 
 # exec_always {
@@ -206,6 +208,10 @@ set $gnome-schema org.gnome.desktop.interface
 #    gsettings set $gnome-schema font-name 'Sans 10'
 # }
 
+
 include /etc/sway/config.d/*
 include ~/.config/sway/bindsym
 include ~/.config/sway/basics
+
+# ibus config
+# exec ibus-daemon -drxR
