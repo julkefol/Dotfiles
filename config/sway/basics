@@ -2,7 +2,7 @@
 font pango: JetBrainsMono Nerd Font Mono Medium 10
 
 # Gaps config
-gaps inner 3
+gaps inner 4
 gaps outer 3
 
 # Border config <normal|none|pixel>
