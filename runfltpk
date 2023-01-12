@@ -1,0 +1,26 @@
+#! /bin/bash
+
+APP0=torrent
+APP2=color-picker
+APP1=metadata
+APP3=firefox
+APP4=tor
+APP5=gimp
+APP6=markdown
+
+
+if [ $1 = $APP0 ]; then
+    flatpak run de.haeckerfelix.Fragments
+elif [ $1 = $APP1 ]; then
+    flatpak run fr.romainvigier.MetadataCleaner
+elif [ $1 = $APP2 ]; then
+    flatpak run nl.hjdskes.gcolor3
+elif [ $1 = $APP3 ]; then
+    flatpak run org.mozilla.firefox
+elif [ $1 = $APP4 ]; then 
+	flatpak run com.github.micahflee.torbrowser-launcher
+elif [ $1 = $APP5 ]; then
+    flatpak run org.gimp.GIMP
+elif [ $1 = $APP6 ]; then
+	flatpak run org.gnome.gitlab.somas.Apostrophe
+fi
