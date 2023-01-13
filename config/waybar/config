@@ -8,8 +8,8 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "temperature", "backlight", "keyboard-state", "sway/language", "clock#time", "clock#date", "tray"],
-    // removed modules-right --> mpd, idle_ihibitor, cpu, memory, battery, battery#bat2,
+    "modules-right": ["pulseaudio", "network", "temperature", "backlight", "keyboard-state", "clock#time", "clock#date", "tray"],
+    // removed modules-right --> mpd, idle_ihibitor, cpu, memory, battery, battery#bat2, sway/language
 
     // Modules configuration
      "sway/workspaces": {
