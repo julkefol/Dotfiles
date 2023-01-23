@@ -1,0 +1,41 @@
+### Set vi mode on prompt
+set editing-mode vi
+
+### Show active mode (command or insert)
+set show-mode-in-prompt on
+
+### Change cursor based on modes 
+# After '\1\e[' inside else block
+# 1 -> blinking block
+# 2 -> steady block
+# 3 -> blinking underline
+# 4 -> steady underline
+# 5 -> blinking pipeline 
+# 6 -> steady pipeline
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[5 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
+
+### Enable history search from the current input
+$if mode=vi
+set keymap vi-command
+# These are for vi-command mode
+#
+# Uncomment these following two if also want to use arrow keys,
+# otherwise it'll act as normal history search.
+#
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
+#
+j: history-search-forward
+k: history-search-backward
+
+set keymap vi-insert
+# These are for vi-insert mode
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+$endif
