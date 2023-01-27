@@ -19,16 +19,13 @@ PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[
 #Light
 #PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;34m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;36m\]:\[\e[00m\]\[\e[01;30m\] \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\] \$ '
 
-export EDITOR="vim"
-export VISUAL="vim"
-
 ### Aliases ###
 
 # ls aliases
 alias ls='ls -lh --color=auto'
 alias la='ls -Alh'
 
-# Confirm before overwriting something and adding verbose
+# Confirm before overwriting something and also add verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias mkdir='mkdir -v'
@@ -44,6 +41,7 @@ alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
 alias :q='exit'
+alias clear='clear && colorscript -e 45'
 
 # Auto 'cd' when entering just a path
 #shopt -s autocd
@@ -64,9 +62,9 @@ export LESS_TERMCAP_so=$'\E[1;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 
+# Run shell-colorscript
+# For more info: https://gitlab.com/dwt1/shell-color-scripts
+colorscript -e 45
+
 # Starship prompt
 eval "$(starship init bash)"
-
-# Run shell-colorscript
-colorscript -e 10
-
