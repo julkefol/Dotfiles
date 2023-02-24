@@ -19,6 +19,8 @@ PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[
 #Light
 #PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;34m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;36m\]:\[\e[00m\]\[\e[01;30m\] \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\] \$ '
 
+PATH="$HOME/.local/bin:$PATH"
+
 ### Aliases ###
 
 # ls aliases
@@ -41,10 +43,10 @@ alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
 alias :q='exit'
-alias clear='clear && colorscript -e 45'
+alias clear='clear && colorscript -e 37'
 
 # Auto 'cd' when entering just a path
-#shopt -s autocd
+shopt -s autocd
 
 # Enable vim keybinding for bash
 set -o vi
@@ -64,7 +66,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 # Run shell-colorscript
 # For more info: https://gitlab.com/dwt1/shell-color-scripts
-colorscript -e 45
+colorscript -e 37
 
 # Starship prompt
 eval "$(starship init bash)"
