@@ -7,14 +7,14 @@
 " ----------------------------------------------------------------------------------------
 
 " Gruvbox specific configs
-let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_underline = 1
-let g:gruvbox_number_column = 'bg0' 
+let g:gruvbox_number_column = 'bg1' 
 let g:gruvbox_italicize_comments = 1
-let g:gruvbox_hls_cursor = 'purple'
+let g:gruvbox_hls_cursor = 'orange'
 let g:gruvbox_vert_split = 'bg1'
 
 " Set colorscheme 
@@ -108,6 +108,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ervandew/supertab'                " Auto completion tool to complete code by pressing TAB
     Plug 'itchyny/lightline.vim' 			" Statusline plugin.
     Plug 'morhetz/gruvbox'                  " Gruvbox color
+    Plug 'jszakmeister/vim-togglecursor'
 call plug#end()
 
 

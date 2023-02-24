@@ -1,39 +1,95 @@
-# Disable the blank line at the start of the prompt
-add_newline = false
+# Color can be used as hax, 256-color, by name (red, green, ...)
 
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$c\
+$cmake\
+$daml\
+$lua\
+$nodejs\
+$python\
+$rust\
+$nix_shell\
+$meson\
+$env_var\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 
-[aws]
-symbol = "  "
+# Enable the blank line at the start of the prompt
+add_newline = true
 
-[buf]
-symbol = " "
+# Makes prompt a single line
+[line_break]
+disabled = true
 
-[c]
-symbol = " "
+[username]
+style_root = 'bold red'
+style_user = 'bold yellow' # Hex can be used
+format = '[$user]($style) in '
+show_always = true
+disabled = false
 
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
+[hostname]
+ssh_only = false
+ssh_symbol = ' '
+# trim_at = '.'
+format = '[$ssh_symbol$hostname]($style) in '
+style = 'bold dimmed green'
+disabled = true
 
 [directory]
+truncation_length = 1
+truncate_to_repo = false
+format = '[$path]($style)[$read_only]($read_only_style) '
+style = 'bold italic #8ec07c'
+disabled = false
+home_symbol = ' ' #
 read_only = " "
+read_only_style = 'red'
+# truncation_symbol = '…/'
 
-[docker_context]
-symbol = " "
+[character]
+format = '$symbol '
+success_symbol = "[ ](#789d6a)" #➜
+error_symbol = "[󰅙 ](red)" #✗
+disabled = false
 
-[elixir]
-symbol = " "
+[cmd_duration]
+min_time = 10_000
+show_milliseconds = false
+format = 'took [$duration]($style) '
+style = 'bold #ebdbb2'
+disabled = false
 
-[elm]
-symbol = " "
+
+[c]
+format = 'via [$symbol($version(-$name) )]($style)'
+version_format ='v${major}.${minor}'
+symbol = " "
+detect_extensions = ['c', 'h']
+commands = [ [ 'cc', '--version' ], [ 'gcc', '--version' ], [ 'clang', '--version' ] ]
+style = 'bold 117'
+disabled = false
 
 [git_branch]
 symbol = " "
-
-[golang]
-symbol = " "
 
 [haskell]
 symbol = " "
@@ -41,23 +97,15 @@ symbol = " "
 [hg_branch]
 symbol = " "
 
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
 [lua]
 symbol = " "
 
 [memory_usage]
 symbol = " "
+disabled = false
 
 [meson]
 symbol = "喝 "
-
-[nim]
-symbol = " "
 
 [nix_shell]
 symbol = " "
@@ -65,23 +113,9 @@ symbol = " "
 [nodejs]
 symbol = " "
 
-[package]
-symbol = " "
-
 [python]
-symbol = " "
-
-[rlang]
-symbol = "ﳒ "
-
-[ruby]
-symbol = " "
+symbol = " "
 
 [rust]
-symbol = " "
-
-[scala]
-symbol = " "
-
-[spack]
-symbol = "🅢 "
+symbol = "󱘗 "
+style = 'red'
