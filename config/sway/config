@@ -1,21 +1,29 @@
-# Clipman clipboard manager
-exec wl-paste -t text --watch clipman store --no-persist
-
 # Copy this to ~/.config/sway/config and edit it to your liking.
 # Read `man 5 sway` for a complete reference.
-include ~/.config/sway/variables
+
+# Modifier key ('Mod1' for 'Alt')
+set $mod Mod4
+
+# Home row direction key, like vim
+set $up k
+set $down j
+set $right l
+set $left h
+
+# Terminal emulator
+set $term foot
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# set $menu wofi --show run
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show run
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg ~/Pictures/wallpapers/forest_fog_tree1.jpg fill
+output * bg ~/Pictures/wallpapers/forest-deer.png fill
 
 #
 # Example configuration:
@@ -189,6 +197,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Volume Control (using function key)
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- 
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# Poweroff
+bindsym $mod+Shift+p exec swaynag -t warning -m 'You are about to power off your system.' -B 'Yes, do it' 'poweroff'
+
+
 #
 # Status Bar:
 #
@@ -198,20 +215,43 @@ bar {
 }
 
 
+set $gnome-schema org.gnome.desktop.interface
+seat seat0 xcursor_theme 'Simp1e-Gruvobx-Dark' 24
+exec_always {
+   gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
+   gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+   gsettings set $gnome-schema cursor-theme 'Simp1e-Gruvbox-Dark'
+   gsettings set $gnome-schema cursor-size '24'
+   gsettings set $gnome-schema font-name 'Cantarell 11'
+}
 
-# seat seat0 xcursor_theme 'Adwaita' 36 
-# exec_always {
-#    gsettings set $gnome-schema gtk-theme 'Gruvbox-Dark-B'
-#    gsettings set $gnome-schema icon-theme ''gruvbox_dark
-#    gsettings set $gnome-schema cursor-theme 'Adwaita'
-#    gsettings set $gnome-schema cursor-size '24'
-#    gsettings set $gnome-schema font-name 'Sans 10'
-# }
+# Set font
+font pango: Ubuntu Mono Nerd Font Medium 12
+
+# Gaps config
+gaps inner 4
+gaps outer 3
+
+# Border config <normal|none|pixel>
+default_border pixel 2
+default_floating_border pixel 2
+
+# Title bar name alignment (disabled for default workspace layout)
+title_align center 
+
+# Title bar and window border color
+# Property_name             Title_border    Title_bg    Title_txt   Indicator   Child-border
+client.focused              #EBDBB2         #EBDBB2     #458588     #ebd18f     #EBDBB2 
+client.focused_inactive     #d79921         #d79921     #ffffff     #ffea00     #d79921
+client.focused_tab_title    #ff7bbb         #4a73de     #ffffff     #ffea00     #8dff69
+client.unfocused            #363636         #363636     #ebdbb2     #282828     #363636
+client.urgent               #cc241d         #cc241d     #ffffff     #ad0700     #cc241d
+
+#xwayland disable
+
+# How windows should be arranged on a workspace <default|stacking|tabbed>
+workspace_layout default
+default_orientation vertical
 
 
 include /etc/sway/config.d/*
-include ~/.config/sway/bindsym
-include ~/.config/sway/basics
-
-# ibus config
-# exec ibus-daemon -drxR
