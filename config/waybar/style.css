@@ -1,16 +1,16 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font Mono, FontAwesome, Arial, sans-serif;
-    font-size: 14px;
+    font-family: Ubuntu Nerd Font, FontAwesome, Arial, sans-serif;
+    font-size: 15px;
     border: none;
-    border-radius: 4;
+    border-radius: 2;
     min-height: 0;
     font-weight: normal;
 }
 
 window#waybar {
     /* background-color: rgba(43, 48, 59, 1.0);*/
-    background-color: rgba(40, 40, 40, 0.95);
+    background-color: rgba(29, 32, 33, 1.0);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #EBDBB2;
     transition-property: background-color;
@@ -52,7 +52,7 @@ button {
 button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ebdbb2;
-    border-radius: 3px;
+    border-radius: 0;
     /*margin: 5px 5px;*/
 }
 
@@ -72,9 +72,9 @@ button:hover {
     background-color: #ebdbb2;
     color: #282828;
     /* box-shadow: inset 0 -3px #282828; */
-    border-radius: 3px;
+    border-radius: 2px;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
 }
 
 #workspaces button.unfocused {
@@ -86,8 +86,11 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #739987;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin: 3px 5px;
+    /*border-bottom: 3px solid #ffffff;*/
 }
 
 #clock,
@@ -129,7 +132,7 @@ button:hover {
     background-color: #ebdbb2;
     color: #282828;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
     min-width: 16px;
 }
 
@@ -189,7 +192,7 @@ label:focus {
     background-color: #ebdbb2;
     color: #282828;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
     min-width: 16px;
 }
 
@@ -201,7 +204,7 @@ label:focus {
     background-color: #ebdbb2;
     color: #282828;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
     min-width: 16px;
 }
 
@@ -284,7 +287,7 @@ label:focus {
     background: #ebdbb2;
     color: #282828;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
     min-width: 16px;
 }
 
@@ -308,7 +311,7 @@ label:focus {
     background: rgba(0, 0, 0, 0.5);
     color: #ebdbb2;
     padding: 0 5px;
-    margin: 5px 5px;
+    margin: 3px 5px;
 }
 
 #scratchpad.empty {
