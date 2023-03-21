@@ -23,7 +23,8 @@ set $menu wofi --show run
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg ~/Pictures/wallpapers/forest-deer.png fill
+#output * bg ~/Pictures/wallpapers/forest-deer.png fill
+exec ~/.azotebg
 
 #
 # Example configuration:
@@ -180,16 +181,16 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
-    bindsym $right resize grow width 20px
+    bindsym $left resize shrink width 45px
+    bindsym $down resize grow height 45px
+    bindsym $up resize shrink height 45px
+    bindsym $right resize grow width 45px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 20px
-    bindsym Down resize grow height 20px
-    bindsym Up resize shrink height 20px
-    bindsym Right resize grow width 20px
+    bindsym Left resize shrink width 45px
+    bindsym Down resize grow height 45px
+    bindsym Up resize shrink height 45px
+    bindsym Right resize grow width 45px
 
     # Return to default mode
     bindsym Return mode "default"
@@ -216,12 +217,12 @@ bar {
 
 
 set $gnome-schema org.gnome.desktop.interface
-seat seat0 xcursor_theme 'Simp1e-Gruvobx-Dark' 24
+seat seat0 xcursor_theme 'capitaine-cursors-light' 36
 exec_always {
    gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-   gsettings set $gnome-schema cursor-theme 'Simp1e-Gruvbox-Dark'
-   gsettings set $gnome-schema cursor-size '24'
+   gsettings set $gnome-schema cursor-theme 'capitaine-cursors-light'
+   gsettings set $gnome-schema cursor-size '36'
    gsettings set $gnome-schema font-name 'Cantarell 11'
 }
 
@@ -233,19 +234,21 @@ gaps inner 4
 gaps outer 3
 
 # Border config <normal|none|pixel>
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 4
+default_floating_border pixel 4
 
 # Title bar name alignment (disabled for default workspace layout)
 title_align center 
 
-# Title bar and window border color
-# Property_name             Title_border    Title_bg    Title_txt   Indicator   Child-border
-client.focused              #EBDBB2         #EBDBB2     #458588     #ebd18f     #EBDBB2 
-client.focused_inactive     #d79921         #d79921     #ffffff     #ffea00     #d79921
-client.focused_tab_title    #ff7bbb         #4a73de     #ffffff     #ffea00     #8dff69
-client.unfocused            #363636         #363636     #ebdbb2     #282828     #363636
-client.urgent               #cc241d         #cc241d     #ffffff     #ad0700     #cc241d
+# Basic color configuration using the Base16 variables for windows and borders.
+include $HOME/.config/sway/colors/base16-gruvbox-dark-hard.config
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 #xwayland disable
 
