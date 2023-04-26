@@ -46,6 +46,8 @@ exec ~/.azotebg
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+bindsym $mod+z exec swaylock
+
 ### Input configuration
 #
 # Example configuration:
@@ -217,12 +219,12 @@ bar {
 
 
 set $gnome-schema org.gnome.desktop.interface
-seat seat0 xcursor_theme 'capitaine-cursors-light' 36
+seat seat0 xcursor_theme 'Qogir-ubuntu-white-cursors' 24
 exec_always {
    gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-   gsettings set $gnome-schema cursor-theme 'capitaine-cursors-light'
-   gsettings set $gnome-schema cursor-size '36'
+   gsettings set $gnome-schema cursor-theme 'Qogir-ubuntu-white-cursors'
+   gsettings set $gnome-schema cursor-size '24'
    gsettings set $gnome-schema font-name 'Cantarell 11'
 }
 
@@ -256,5 +258,16 @@ client.background       $base07
 workspace_layout default
 default_orientation vertical
 
+# Corner
+corner_radius 5
+smart_corner_radius enable
+
+# Shadow 
+shadows disabled
+shadow_blur_radius 30
+shadow_color #000000
+
+# Dim focused window
+default_dim_inactive 0.3
 
 include /etc/sway/config.d/*

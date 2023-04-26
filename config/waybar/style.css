@@ -3,7 +3,7 @@
     font-family: Ubuntu Nerd Font, FontAwesome, Arial, sans-serif;
     font-size: 15px;
     border: none;
-    border-radius: 2;
+    border-radius: 0;
     min-height: 0;
     font-weight: normal;
 }
@@ -21,7 +21,6 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
-
 /*
 window#waybar.empty {
     background-color: transparent;
@@ -40,6 +39,12 @@ window#waybar.chromium {
     border: none;
 }
 
+#window {
+    opacity: 0.7;
+    font-weight: bold;
+    font-family: Ubuntu Nerd Font;
+}
+
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -51,15 +56,15 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ebdbb2;
+    box-shadow: inset 0 -3px #d5c4a1;
     border-radius: 0;
     /*margin: 5px 5px;*/
 }
 
 #workspaces button {
     background-color: transparent;
-    color: #ebdbb2;
-    padding: 0 10px;
+    color: #d5c3a1;
+    padding: 0 12px;
 }
 
 #workspaces button:hover {
@@ -69,16 +74,16 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #ebdbb2;
+    background-color: #d5c4a1;
     color: #282828;
     /* box-shadow: inset 0 -3px #282828; */
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 0 5px;
-    margin: 3px 5px;
+    margin: 2px 5px;
 }
 
 #workspaces button.unfocused {
-    color: #ebdbb2;
+    color: #d5c4a1;
 }
 
 #workspaces button.urgent {
@@ -108,6 +113,7 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#user
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -129,11 +135,9 @@ button:hover {
 }
 
 #clock {
-    background-color: #ebdbb2;
-    color: #282828;
-    padding: 0 5px;
-    margin: 3px 5px;
-    min-width: 16px;
+    /* background-color: #ebdbb2; */
+    color: #d5cda1;
+    font-weight: bold;
 }
 
 #battery {
@@ -181,7 +185,8 @@ label:focus {
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #a89984;
+    color: #282828;
 }
 
 #backlight {
@@ -189,11 +194,8 @@ label:focus {
 }
 
 #network {
-    background-color: #ebdbb2;
+    background-color: #d5c4a1;
     color: #282828;
-    padding: 0 5px;
-    margin: 3px 5px;
-    min-width: 16px;
 }
 
 #network.disconnected {
@@ -203,9 +205,7 @@ label:focus {
 #pulseaudio {
     background-color: #ebdbb2;
     color: #282828;
-    padding: 0 5px;
-    margin: 3px 5px;
-    min-width: 16px;
+    border-radius: 8px 0px 0px 8px;
 }
 
 #pulseaudio.muted {
@@ -237,7 +237,8 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: #bdae93;
+    color: #282828;
 }
 
 #temperature.critical {
@@ -312,6 +313,11 @@ label:focus {
     color: #ebdbb2;
     padding: 0 5px;
     margin: 3px 5px;
+}
+
+#user {
+    background: #928374;
+    color: #282828;
 }
 
 #scratchpad.empty {

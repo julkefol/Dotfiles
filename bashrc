@@ -24,15 +24,13 @@ PATH="$HOME/.local/bin:$PATH"
 ### Aliases ###
 
 # ls aliases
-alias ls='ls -lh --color=auto'
-alias la='ls -Alh'
+alias ls='ls -lh --color=auto --group-directories-first'
+alias la='ls -Alh --group-directories-first'
 
 # Confirm before overwriting something and also add verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias mkdir='mkdir -v'
-alias rm='rm -v'
-#alias rm='rm -i' # Disabled it because of always prompting for every files or directories inside.
 
 # Custom colorize output
 alias grep='grep --color=auto'
@@ -43,13 +41,15 @@ alias bashrc='vim ~/.bashrc'
 alias vi='vim'
 alias vimrc='vim ~/.vimrc'
 alias :q='exit'
-alias clear='clear && colorscript -e 37'
 
 # Auto 'cd' when entering just a path
 shopt -s autocd
 
 # Enable vim keybinding for bash
 set -o vi
+
+# nnn (n³)
+alias nnn='nnn -do'
 
 # Completion for commands
 complete -c man which
@@ -66,7 +66,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 
 # Run shell-colorscript
 # For more info: https://gitlab.com/dwt1/shell-color-scripts
-colorscript -e 37
+colorscript -r
 
 # Starship prompt
 eval "$(starship init bash)"

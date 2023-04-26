@@ -1,18 +1,10 @@
-"                     █ █   █ █  █ █ █ █  █ ██   ██ █  █ ███ █_   █ ██ ██                 
-"                     █ █   █ █    █ █    █ ███ ███ █  █ █   █ █  █ ██ ███                
-"                     █ █   █ █    █ █    █ ███████ █  █ █   █ █  █ █                     
-"                  _  █ ██ ██ █    █ █    █ ██ █ ██ █  █ ██ █ █   █ █                     
-"                 █ █  █ █ █ █     █ █    █ █ █_█ █ █  █ █   █ █  █ ██ ███                
-"                 █_█   ██_██    █_█_█_█  █_█     █_█  █_█   █_█  █_██_██                 
-" ----------------------------------------------------------------------------------------
-
 " Gruvbox specific configs
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_termcolors = 256
 let g:gruvbox_bold = 1
 let g:gruvbox_italic = 1
 let g:gruvbox_underline = 1
-let g:gruvbox_number_column = 'bg1' 
+let g:gruvbox_number_column = 'bg0' 
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_hls_cursor = 'orange'
 let g:gruvbox_vert_split = 'bg1'
@@ -97,8 +89,17 @@ set showmatch
 " Set spell checking for words
 set spell
 
+set splitbelow splitright
+
 " Set mouse support 
-"set mouse=n
+"set mouse=a
+
+" Make adjusting split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
 
 " PLUGINS -- Vim-plug
 call plug#begin('~/.vim/plugged')
