@@ -24,8 +24,8 @@ PATH="$HOME/.local/bin:$PATH"
 ### Aliases ###
 
 # ls aliases
-alias ls='ls -lh --color=auto --group-directories-first'
-alias la='ls -Alh --group-directories-first'
+alias ls='ls -lh --color=always --group-directories-first'
+alias la='ls -A'
 
 # Confirm before overwriting something and also add verbose
 alias cp='cp -iv'

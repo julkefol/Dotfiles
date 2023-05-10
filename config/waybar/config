@@ -6,10 +6,10 @@
     "spacing": 0, // Gaps between modules (1px)
 
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "temperature", "disk", "backlight", "keyboard-state", "user", "tray"],
-    // removed modules-right --> mpd, idle_ihibitor, cpu, memory, battery, battery#bat2, sway/language, clock#time, clock#date
+    "modules-right": ["pulseaudio", "network", "temperature", "disk", "user", "tray"],
+    // removed modules-right --> mpd, idle_ihibitor, cpu, memory, battery, battery#bat2, sway/language, clock#time, clock#date, backlight, keyboard-state
     // removed modules-center --> sway/window
 
 
@@ -19,10 +19,10 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "ﱘ",
+             "1": "󰅩",
+             "2": " ",
+             "3": " ",
+             "4": "󰹄",
              "5": "",
              "urgent": "",
              "focused": "",

@@ -128,3 +128,9 @@ let g:syntastic_check_on_wq = 0
 
 " Set gruvbox color
 "autocmd vimenter * ++nested colorscheme gruvbox
+
+
+if $TERM == 'xterm-256color'
+  let g:togglecursor_force = 'xterm'
+endif
+
