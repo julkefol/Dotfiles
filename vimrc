@@ -1,22 +1,54 @@
-" Gruvbox specific configs
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_termcolors = 256
-let g:gruvbox_bold = 1
-let g:gruvbox_italic = 1
-let g:gruvbox_underline = 1
-let g:gruvbox_number_column = 'bg0' 
-let g:gruvbox_italicize_comments = 1
-let g:gruvbox_hls_cursor = 'orange'
-let g:gruvbox_vert_split = 'bg1'
+" PLUGINS -- Vim-plug
+call plug#begin('~/.vim/plugged')
+    Plug 'scrooloose/syntastic'				" Linter or code checker for vim.
+    Plug 'jiangmiao/auto-pairs'             " Automatically pair brackets when typing
+    Plug 'ervandew/supertab'                " Auto completion tool to complete code by pressing TAB
+    Plug 'itchyny/lightline.vim' 			" Statusline plugin.
+    Plug 'morhetz/gruvbox'                  " Gruvbox color
+    Plug 'Everblush/everblush.vim'          " Everblush color
+    Plug 'jszakmeister/vim-togglecursor'
+    Plug 'yggdroot/indentline'
+    Plug 'ap/vim-css-color'
+call plug#end()
 
-" Set colorscheme 
-colorscheme gruvbox
-    
-" Set background color.
-set background=dark
-    
+let g:indentLine_setColors = 1
+
+" GVim
+let g:indentLine_color_gui = '#424c50'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+"let g:indentLine_bgcolor_term = 202
+"let g:indentLine_bgcolor_gui = '#FF5F00'
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 " Enable 23-bit true color.
 set termguicolors
+
+" Set colorscheme 
+colorscheme everblush
+
+if g:colors_name == "everblush"
+    let g:everblushNR = 0
+    let g:everblush_transp_bg = 0
+elseif g:colors_name == "gruvbox"
+    let g:gruvbox_contrast_dark = 'hard'
+    let g:gruvbox_termcolors = 256
+    let g:gruvbox_bold = 1
+    let g:gruvbox_italic = 1
+    let g:gruvbox_underline = 1
+    let g:gruvbox_number_column = 'bg0' 
+    let g:gruvbox_italicize_comments = 1
+    let g:gruvbox_hls_cursor = 'orange'
+    let g:gruvbox_vert_split = 'bg1'
+endif
+
+" Set background color.
+set background=dark
     
 " Lightline specific config
 set laststatus=2
@@ -26,7 +58,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-	        \ 'colorscheme': 'gruvbox',
+	        \ 'colorscheme': 'everblush',
 	        \}
 
 
@@ -100,19 +132,6 @@ noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
-
-" PLUGINS -- Vim-plug
-call plug#begin('~/.vim/plugged')
-
-    Plug 'scrooloose/syntastic'				" Linter or code checker for vim.
-    Plug 'jiangmiao/auto-pairs'             " Automatically pair brackets when typing
-    Plug 'ervandew/supertab'                " Auto completion tool to complete code by pressing TAB
-    Plug 'itchyny/lightline.vim' 			" Statusline plugin.
-    Plug 'morhetz/gruvbox'                  " Gruvbox color
-    Plug 'jszakmeister/vim-togglecursor'
-call plug#end()
-
-
 " Template configs
 autocmd BufNewFile *.c 0r ~/.vim/templates/C.c
 autocmd BufWinEnter *.c call cursor(4,1)
@@ -129,7 +148,8 @@ let g:syntastic_check_on_wq = 0
 " Set gruvbox color
 "autocmd vimenter * ++nested colorscheme gruvbox
 
-
+" Toggle cursor support for unsupported terminal
+" NOTE: Cursor customization should be disable in the terminal config.
 if $TERM == 'xterm-256color'
   let g:togglecursor_force = 'xterm'
 endif
