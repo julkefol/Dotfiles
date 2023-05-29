@@ -58,7 +58,7 @@ disabled = true
 truncation_length = 1
 truncate_to_repo = false
 format = '[$path]($style)[$read_only]($read_only_style) '
-style = 'bold italic #7aad9a'
+style = 'bold italic cyan'
 disabled = false
 home_symbol = ' '
 read_only = " "
@@ -67,8 +67,8 @@ read_only_style = 'red'
 
 [character]
 format = '$symbol '
-success_symbol = "[ ](#789d6a)" #➜
-error_symbol = "[󰅙 ](red)" #✗
+success_symbol = "[❯](green)" #➜
+error_symbol = "[❯](red)" #✗
 disabled = false
 
 [cmd_duration]
