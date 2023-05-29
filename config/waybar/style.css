@@ -9,10 +9,9 @@
 }
 
 window#waybar {
-    /* background-color: rgba(43, 48, 59, 1.0);*/
     background-color: rgba(29, 32, 33, 1.0);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #EBDBB2;
+    color: #dadada;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
@@ -21,6 +20,7 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
+
 /*
 window#waybar.empty {
     background-color: transparent;
@@ -29,15 +29,6 @@ window#waybar.solo {
     background-color: #FFFFFF;
 }
 */
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
 
 #window {
     opacity: 0.7;
@@ -56,14 +47,20 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #d5c4a1;
+    box-shadow: inset 0 -3px #bdc3c2;
     border-radius: 0;
     /*margin: 5px 5px;*/
 }
 
+#workspaces {
+    background-color: #313b3f;
+    border-radius: 0px 8px 8px 0px;
+    margin: 0 6px;
+}
+
 #workspaces button {
     background-color: transparent;
-    color: #d5c3a1;
+    color: #bdc3c2;
     padding: 0 12px;
 }
 
@@ -74,8 +71,8 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #d5c4a1;
-    color: #282828;
+    background-color: #bdc3c2;
+    color: #232a2d;
     /* box-shadow: inset 0 -3px #282828; */
     border-radius: 3px;
     padding: 0 5px;
@@ -83,45 +80,20 @@ button:hover {
 }
 
 #workspaces button.unfocused {
-    color: #d5c4a1;
+    color: #bdc3c2;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #e57474;
 }
 
 #mode {
-    background-color: #739987;
+    background-color: #67cbe7;
+    color: #232a2d;
     border-radius: 3px;
-    padding: 0 5px;
-    margin: 3px 5px;
+    padding: 0 8px;
+    margin: 2px 5px;
     /*border-bottom: 3px solid #ffffff;*/
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#user
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -136,7 +108,7 @@ button:hover {
 
 #clock {
     /* background-color: #ebdbb2; */
-    color: #d5cda1;
+    color: #bdc3c2;
     font-weight: bold;
 }
 
@@ -185,8 +157,9 @@ label:focus {
 }
 
 #disk {
-    background-color: #a89984;
-    color: #282828;
+    background-color: #313b3f;
+    color: #71baf2;
+    padding: 0 8px;
 }
 
 #backlight {
@@ -194,23 +167,25 @@ label:focus {
 }
 
 #network {
-    background-color: #d5c4a1;
-    color: #282828;
+    background-color: #313b3f;
+    color: #96d988;
+    padding: 0 8px;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #e57e7e;
 }
 
 #pulseaudio {
-    background-color: #ebdbb2;
-    color: #282828;
+    background-color: #313b3f;
+    color: #ef7e7e;
+    padding: 0 8px;
     border-radius: 8px 0px 0px 8px;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: #e57e73;
+    color: #232a2d;
 }
 
 #wireplumber {
@@ -222,23 +197,10 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
 #temperature {
-    background-color: #bdae93;
-    color: #282828;
+    background-color: #313b3f;
+    color: #f4d67a;
+    padding: 0 8px;
 }
 
 #temperature.critical {
@@ -267,23 +229,6 @@ label:focus {
     color: #2d3436;
 }
 
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
 #language {
     background: #ebdbb2;
     color: #282828;
@@ -310,14 +255,15 @@ label:focus {
 
 #scratchpad {
     background: rgba(0, 0, 0, 0.5);
-    color: #ebdbb2;
+    color: #bdc3c2;
     padding: 0 5px;
     margin: 3px 5px;
 }
 
 #user {
-    background: #928374;
-    color: #282828;
+    background-color: #313b3f;
+    color: #ce89df;
+    padding: 0 8px;
 }
 
 #scratchpad.empty {

@@ -9,8 +9,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "temperature", "disk", "user", "tray"],
-    // removed modules-right --> mpd, idle_ihibitor, cpu, memory, battery, battery#bat2, sway/language, clock#time, clock#date, backlight, keyboard-state
-    // removed modules-center --> sway/window
+    // removed modules-right --> idle_ihibitor, cpu, memory, battery, battery#bat2, sway/language, clock#time, clock#date, backlight, keyboard-state
 
 
     // Modules configuration
@@ -19,10 +18,10 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-             "1": "󰅩",
-             "2": " ",
-             "3": " ",
-             "4": "󰹄",
+             "1": "",
+             "2": "󰈹",
+             "3": "",
+             "4": "",
              "5": "",
              "urgent": "",
              "focused": "",
@@ -60,33 +59,6 @@
 
     "sway/window": {
         "format": "{app_id}",
-    },
-
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
     "idle_inhibitor": {
@@ -128,9 +100,11 @@
         "format": "{usage}% ",
         "tooltip": false
     },
+
     "memory": {
         "format": "{}% "
     },
+
     "temperature": {
         "thermal-zone": 2,
         "hwmon-path": "/sys/class/hwmon/hwmon0/temp2_input",
@@ -149,6 +123,7 @@
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
+
     "battery": {
         "states": {
             // "good"app_id: 95,
@@ -163,9 +138,11 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
+
     "network": {
         "interval": 2,
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -176,7 +153,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "format-alt": "{bandwidthUpBytes}󰁝 {bandwidthDownBytes}󰁅"
+        "format-alt": "{bandwidthUpBytes}󰁝󰁅{bandwidthDownBytes}"
     },
 
     "pulseaudio": {
@@ -202,19 +179,7 @@
     "user": {
         "interval": 60,
         "format": " {work_H}:{work_M} 󰔚 ",
-    },
-
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
+
 }
 
