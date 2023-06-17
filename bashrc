@@ -1,5 +1,3 @@
-# ~/.bashrc
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -19,7 +17,7 @@ PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[
 #Light
 #PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;34m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;36m\]:\[\e[00m\]\[\e[01;30m\] \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\] \$ '
 
-PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ### Aliases ###
 
@@ -42,14 +40,14 @@ alias vi='vim'
 alias vimrc='vim ~/.vimrc'
 alias :q='exit'
 
+alias rm='trash-put'
+alias tsm='transmission-remote'
+
 # Auto 'cd' when entering just a path
 shopt -s autocd
 
 # Enable vim keybinding for bash
 set -o vi
-
-# nnn (n³)
-alias nnn='nnn -do'
 
 # Completion for commands
 complete -c man which
