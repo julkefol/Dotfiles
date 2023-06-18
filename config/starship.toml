@@ -27,7 +27,6 @@ $line_break\
 $jobs\
 $time\
 $status\
-$os\
 $container\
 $shell\
 $character"""
@@ -61,14 +60,14 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 style = 'bold italic cyan'
 disabled = false
 home_symbol = ' '
-read_only = " "
+read_only = " 󰌾"
 read_only_style = 'red'
 # truncation_symbol = '…/'
 
 [character]
 format = '$symbol '
-success_symbol = "[❯](green)" #➜
-error_symbol = "[❯](red)" #✗
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
 disabled = false
 
 [cmd_duration]
@@ -99,10 +98,6 @@ symbol = " "
 
 [lua]
 symbol = " "
-
-[memory_usage]
-symbol = " "
-disabled = false
 
 [meson]
 symbol = "喝 "
