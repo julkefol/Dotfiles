@@ -1,3 +1,7 @@
+### Prettyfi
+set colored-stats On
+set colored-completion-prefix On
+
 ### Set vi mode on prompt
 set editing-mode vi
 
@@ -41,3 +45,6 @@ set keymap vi-insert
 $endif
 
 # "\t": menu-complete
+
+# ^C no longer shows on C-c keypres
+set echo-control-characters off
