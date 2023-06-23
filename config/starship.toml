@@ -43,7 +43,7 @@ style_root = 'bold red'
 style_user = 'bold yellow' # Hex can be used
 format = '[$user]($style) in '
 show_always = true
-disabled = false
+disabled = true
 
 [hostname]
 ssh_only = false
