@@ -1,6 +1,3 @@
-# Copy this to ~/.config/sway/config and edit it to your liking.
-# Read `man 5 sway` for a complete reference.
-
 # Modifier key ('Mod1' for 'Alt')
 set $mod Mod4
 
@@ -227,11 +224,11 @@ bar {
 }
 
 set $gnome-schema org.gnome.desktop.interface
-seat seat0 xcursor_theme 'Qogir-ubuntu-white-cursors' 24
+seat seat0 xcursor_theme 'Bibata-Modern-Ice' 24
 exec_always {
-   gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
+   gsettings set $gnome-schema gtk-theme 'Everblush'
    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-   gsettings set $gnome-schema cursor-theme 'Qogir-ubuntu-white-cursors'
+   gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
    gsettings set $gnome-schema cursor-size '24'
    gsettings set $gnome-schema font-name 'Cantarell 11'
 }
@@ -283,5 +280,8 @@ default_orientation vertical
 #blur_radius 5
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# dunst
+exec dunst
 
 include /etc/sway/config.d/*
