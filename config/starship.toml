@@ -54,7 +54,7 @@ style = 'bold dimmed green'
 disabled = true
 
 [directory]
-truncation_length = 1
+truncation_length = 2
 truncate_to_repo = false
 format = '[$path]($style)[$read_only]($read_only_style) '
 style = 'bold italic cyan'
@@ -62,7 +62,7 @@ disabled = false
 home_symbol = ' '
 read_only = " 󰌾"
 read_only_style = 'red'
-# truncation_symbol = '…/'
+truncation_symbol = '…/'
 
 [character]
 format = '$symbol '
