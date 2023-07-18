@@ -9,4 +9,4 @@ user_pref("browser.uidensity", 1);
 //user_pref("privacy.resistFingerprinting.letterboxing", false); 
 //user_pref("dom.event.clipboardevents.enabled", false); //Disable JS access to clipboard
 user_pref("ui.key.menuAccessKeyFocuses", false); //Don't show the menu bar when Alt-key gets pressed
-
+user_pref("browser.urlbar.suggest.calculator", true); // Enable calculation on urlbar
