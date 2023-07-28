@@ -1,0 +1,3 @@
+#! /bin/bash
+
+wlsunset -t 2500 -T 3500 &
