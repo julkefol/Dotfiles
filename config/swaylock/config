@@ -1,0 +1,8 @@
+ignore-empty-password
+show-failed-attempts
+font=Ubuntu Nerd Font
+font-size=25
+indicator-radius=100
+## Gruvbox material
+color=1D2021
+bs-hl-color=EA6962
