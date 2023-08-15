@@ -1,0 +1,12 @@
+@define-color bg  rgba(29, 32, 33, 1.0);
+@define-color fg  rgba(235, 219, 178, 1.0);
+
+@define-color module-bg rgba(40, 40, 40, 1.0);
+
+@define-color reg-red rgba(234, 105, 98, 1.0);
+@define-color reg-green   rgba(169, 182, 101, 1.0);
+@define-color reg-blue    rgba(125, 174, 163, 1.0);
+@define-color reg-yellow rgba(216, 166, 87, 1.0);
+@define-color reg-megenta rgba(211, 134, 155, 1.0);
+@define-color reg-cyan rgba(137, 180, 130, 1.0);
+
