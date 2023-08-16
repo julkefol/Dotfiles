@@ -19,29 +19,10 @@ PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[
 
 export PATH="$HOME/.local/bin:$PATH"
 
-### Aliases ###
-
-# ls aliases
-alias ls='ls -lh --color=always --group-directories-first'
-alias la='ls -A'
-
-# Confirm before overwriting something and also add verbose
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias mkdir='mkdir -v'
-
-# Custom colorize output
-alias grep='grep --color=auto'
-alias ip='ip -color=auto'
-
-# Others
-alias bashrc='vim ~/.bashrc'
-alias vi='vim'
-alias vimrc='vim ~/.vimrc'
-alias :q='exit'
-
-alias rm='trash-put'
-alias tsm='transmission-remote'
+# Load aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # Auto 'cd' when entering just a path
 shopt -s autocd
