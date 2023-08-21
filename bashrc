@@ -12,12 +12,13 @@
 # 37: White/Light-gray
 
 #Dark
-PS1='\[\e[01;33m\][\[\e[00m\]\[\e[01;32m\]\u\[\e[00m\]\[\e[01;37m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;34m\]:\[\e[00m\]\[\e[01;36m\] \W\[\e[00m\]\[\e[01;33m\]]\[\e[00m\] \$ '
+PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;33m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;34m\]\h\[\e[00m\]\[\e[01;34m\]:\[\e[00m\]\[\e[01;35m\] \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\]\$ '
 
 #Light
 #PS1='\[\e[01;31m\][\[\e[00m\]\[\e[01;34m\]\u\[\e[00m\]\[\e[01;32m\]@\[\e[00m\]\[\e[01;35m\]\h\[\e[00m\]\[\e[01;36m\]:\[\e[00m\]\[\e[01;30m\] \W\[\e[00m\]\[\e[01;31m\]]\[\e[00m\] \$ '
 
 export PATH="$HOME/.local/bin:$PATH"
+export EDITOR="/bin/vim"
 
 # Load aliases
 if [ -f ~/.bash_aliases ]; then
@@ -42,6 +43,10 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[1;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
+
+# nnn config
+export NNN_COLORS="2536"
+export NNN_TRASH=1
 
 # Run shell-colorscript
 # For more info: https://gitlab.com/dwt1/shell-color-scripts
