@@ -2,23 +2,12 @@
 
 format = """
 $username\
-$hostname\
 $directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$hg_branch\
-$c\
-$cmake\
-$daml\
-$lua\
-$nodejs\
-$python\
-$rust\
-$nix_shell\
-$meson\
 $env_var\
 $custom\
 $sudo\
@@ -45,16 +34,8 @@ format = '[$user]($style) in '
 show_always = true
 disabled = true
 
-[hostname]
-ssh_only = false
-ssh_symbol = ' '
-# trim_at = '.'
-format = '[$ssh_symbol$hostname]($style) in '
-style = 'bold dimmed green'
-disabled = true
-
 [directory]
-truncation_length = 2
+truncation_length = 1
 truncate_to_repo = false
 format = '[$path]($style)[$read_only]($read_only_style) '
 style = 'bold italic cyan'
@@ -74,43 +55,8 @@ disabled = false
 min_time = 10_000
 show_milliseconds = false
 format = 'took [$duration]($style) '
-style = 'bold #ebdbb2'
-disabled = false
-
-
-[c]
-format = 'via [$symbol($version(-$name) )]($style)'
-version_format ='v${major}.${minor}'
-symbol = " "
-detect_extensions = ['c', 'h']
-commands = [ [ 'cc', '--version' ], [ 'gcc', '--version' ], [ 'clang', '--version' ] ]
-style = 'bold 117'
+style = 'bold yellow'
 disabled = false
 
 [git_branch]
 symbol = " "
-
-[haskell]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[meson]
-symbol = "喝 "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[python]
-symbol = " "
-
-[rust]
-symbol = "󱘗 "
-style = 'red'
