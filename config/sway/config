@@ -10,11 +10,10 @@ set $left h
 # Terminal emulator
 set $term foot
 
-# Your preferred application launcher
+# Application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu tofi-run | xargs swaymsg exec --
+set $menu tofi-drun | xargs swaymsg exec --
 #set $menu tofi-drun --drun-launch=true
 
 ### Output configuration
@@ -206,14 +205,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Volume Control (using function key)
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- 
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume 0 +10%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume 0 -10%
+bindsym XF86AudioMute exec pactl -- set-sink-mute 0 toggle
 
 # Poweroff
 bindsym $mod+Shift+p exec swaynag -t warning -m 'You are about to power off your system.' -B 'Yes, do it' 'poweroff'
 
-# Clipboard
 # Cliphist clipboard manager
 exec wl-paste --watch cliphist store
 bindsym $mod+p exec cliphist list | tofi --anchor left | cliphist decode | wl-copy
@@ -226,8 +224,8 @@ bar {
 set $gnome-schema org.gnome.desktop.interface
 seat seat0 xcursor_theme 'Bibata-Modern-Ice' 24
 exec_always {
-   gsettings set $gnome-schema gtk-theme 'Everblush'
-   gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+   gsettings set $gnome-schema gtk-theme 'gruvbox-dark-gtk'
+   gsettings set $gnome-schema icon-theme 'Gruvbox-Material-Dark'
    gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
    gsettings set $gnome-schema cursor-size '24'
    gsettings set $gnome-schema font-name 'Cantarell 11'
@@ -241,13 +239,13 @@ gaps inner 4
 gaps outer 3
 
 # Border config <normal|none|pixel>
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 2
+default_floating_border pixel 2
 
 # Title bar name alignment (disabled for default workspace layout)
 title_align center 
 
-include $HOME/.config/sway/colors/everblush.config
+include $HOME/.config/sway/colors/gruvbox-material.config
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base01 $base00 $base01 $base02   $base03
 client.focused_inactive $base01 $base00 $base01 $base04   $base05
@@ -260,10 +258,9 @@ client.urgent           $base01 $base00 $base01 $base08   $base09
 workspace_layout default
 default_orientation vertical
 
-### SwayFX specific config ###
+# [SwayFX specific config]
 ## Corner
-# corner_radius 5
-# smart_corner_radius enable
+#corner_radius 5
 
 ## Shadow 
 #shadows disabled
@@ -274,10 +271,18 @@ default_orientation vertical
 # default_dim_inactive 0.3
 
 ## Blur
-#blur enable
+#blur disable
 #blur_xray disable
-#blur_passes 5
-#blur_radius 5
+#blur_passes 3
+#blur_radius 3
+
+for_window [app_id="mpv"] floating enable
+for_window [app_id="mpv"] move position center
+for_window [app_id="mpv"] resize set 800 600
+#for_window [app_id="Foot"] blur enable
+#blur disable
+#layer_effects "waybar" blur enable;
+
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
