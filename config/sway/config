@@ -44,7 +44,8 @@ exec foot --server
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-bindsym $mod+f1 exec swaylock
+bindsym $mod+F1 exec swaylock
+bindsym $mod+F2 exec /home/zima/.config/sway/switch-key.sh
 
 ### Input configuration
 #
@@ -239,8 +240,8 @@ gaps inner 4
 gaps outer 3
 
 # Border config <normal|none|pixel>
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
 
 # Title bar name alignment (disabled for default workspace layout)
 title_align center 
