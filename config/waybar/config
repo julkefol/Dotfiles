@@ -21,11 +21,12 @@
              "1": "",
              "2": "󰈹",
              "3": "",
-             "4": "",
+             "4": "",
              "5": "",
              "urgent": "",
              "focused": "",
              "default": ">",
+             "high-priority-named": ["1", "2", "3", "4"]
          },
 
          "persistent_workspaces": {
@@ -83,8 +84,8 @@
     "clock#time": {
         "interval": 1,
         "format": " {:%I:%M}", // Head over to 
-                                // https://howardhinnant.github.io/date/date.html#to_stream_formatting
-                               // for formatting 
+                               // https://howardhinnant.github.io/date/date.html#to_stream_formatting
+                              // for formatting 
         "tooltip": false
     },
 
