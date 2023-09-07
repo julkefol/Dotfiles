@@ -20,5 +20,4 @@ alias :q='exit'
 alias rm='trash-put'
 alias tsm='transmission-remote'
 
-alias nnn='nnn -d -C'
-
+alias nnn='nnn -d -R'
