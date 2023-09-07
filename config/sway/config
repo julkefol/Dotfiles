@@ -45,7 +45,7 @@ exec foot --server
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 bindsym $mod+F1 exec swaylock
-bindsym $mod+F2 exec /home/zima/.config/sway/switch-key.sh
+bindsym $mod+F2 exec $HOME/.config/sway/scripts/switch-key.sh
 
 ### Input configuration
 #
