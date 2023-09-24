@@ -8,14 +8,14 @@ result-spacing = 25
 num-results = 5
 font = /usr/share/fonts/TTF/UbuntuNerdFont-Regular.ttf
 background-color = #000A
-text-color = #dadada
-alternate-result-color = #b3b9b8
-selection-color = #67b0e8
-selection-match-color = #e57474
+text-color = #d4be98
+alternate-result-color = #a89984
+selection-color = #7daea3
+selection-match-color = #e78a4e
 
 hide-cursor = true
 text-cursor = true
 text-cursor-style = underscore
-text-cursor-color = #dadada
+text-cursor-color = #d4be98
 
 terminal = foot
