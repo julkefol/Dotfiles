@@ -21,3 +21,5 @@ alias rm='trash-put'
 alias tsm='transmission-remote'
 
 alias nnn='nnn -d -R'
+
+alias toipe='toipe -n 60 -w top500'
