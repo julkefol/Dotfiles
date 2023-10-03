@@ -3,6 +3,43 @@ show-failed-attempts
 font=Ubuntu Nerd Font
 font-size=25
 indicator-radius=100
+image=~/repos/Dotfiles/images/lockscreen-img.png
 ## Gruvbox material
 color=1D2021
-bs-hl-color=EA6962
+# backspace highlight color
+bs-hl-color=ea6962
+
+caps-lock-bs-hl-color=f5e0dc
+caps-lock-key-hl-color=a6e3a1
+# circle inside the ring
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+# input color
+key-hl-color=d4be98
+
+layout-bg-color=ffffff
+layout-border-color=00000000
+layout-text-color=cdd6f4
+# border around ring
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+# inside of ring
+ring-color=7daea3
+ring-clear-color=89b482
+ring-caps-lock-color=fab387
+ring-ver-color=d3869b
+ring-wrong-color=ea6962
+# input seprator inside ring
+separator-color=1d2021
+# text for the rings
+text-color=#d4be98
+text-clear-color=89b482
+text-caps-lock-color=fab387
+text-ver-color=d3869b
+text-wrong-color=ea6962
