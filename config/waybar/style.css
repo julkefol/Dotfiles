@@ -79,7 +79,7 @@ button:hover {
     /* box-shadow: inset 0 -3px #282828; */
     border-radius: 3px;
     padding: 0 5px;
-    margin: 2px 5px;
+    margin: 4px 5px;
 }
 
 #workspaces button.unfocused {
