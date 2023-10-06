@@ -8,7 +8,8 @@ set $right l
 set $left h
 
 # Terminal emulator
-set $term foot
+exec foot --server
+set $term footclient
 
 # Application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -16,15 +17,10 @@ set $term foot
 set $menu tofi-drun | xargs swaymsg exec --
 #set $menu tofi-drun --drun-launch=true
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/default.png fill
-#output * bg ~/Pictures/wallpapers/forest-deer.png fill
+# Wallpaper (managed by Azote)
+# output * bg ~/Pictures/wallpapers/example.png fill
 exec ~/.azotebg
-exec foot --server
 
-#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
