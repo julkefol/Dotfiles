@@ -1,5 +1,6 @@
 # A simple workaround to change the keyboard layout to Bangla(Probhat).
-# Btw, not works on all windows.
+# Btw, not works on only-wayland applications.
+# Required pkg: ibus-m17n
 #! /bin/bash
 
 PROC_NAME="ibus-portal"
