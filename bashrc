@@ -2,11 +2,11 @@
 [[ $- != *i* ]] && return
 
 ### Color values for PS1 ###
-# 30: Black
-# 31: Red	
-# 32: Green	
+# 30: Black,
+# 31: Red
+# 32: Green
 # 33: Yellow
-# 34: Blue	
+# 34: Blue
 # 35: Purple
 # 36: Cyan
 # 37: White/Light-gray
@@ -44,9 +44,13 @@ export LESS_TERMCAP_so=$'\E[1;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 
+# nvim as manpager
+# export MANPAGER="nvim +Man!"
+
 # nnn config
 export NNN_COLORS="2536"
 export NNN_TRASH=1
+export NNN_FCOLORS='c1e2022e026001f7c6d6abc4'
 
 # Run shell-colorscript
 # For more info: https://gitlab.com/dwt1/shell-color-scripts
