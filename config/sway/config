@@ -9,7 +9,7 @@ set $left h
 
 # Terminal emulator
 exec foot --server
-set $term footclient
+set $term foot
 
 # Application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
