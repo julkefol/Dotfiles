@@ -60,3 +60,7 @@ disabled = false
 
 [git_branch]
 symbol = " "
+
+[git_status]
+deleted = ''
+modified = '  '
