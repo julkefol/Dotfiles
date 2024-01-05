@@ -1,0 +1,36 @@
+import = [
+    "~/.config/alacritty/gruvbox_material_hard_dark.toml",
+]
+shell = { program = "/usr/bin/bash" }
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.95
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+decorations = "None"
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+[font]
+normal = { family = "FantasqueSansM Nerd Font", style = "Regular" }
+size = 16
+
+[bell]
+animation = "Ease"
+duration = 100
+color = "#424242"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+{ key = "0", mods = "Control", action = "ResetFontSize" },
+{ key = "j", mods = "Control", action = "ScrollHalfPageDown" },
+{ key = "k", mods = "Control", action = "ScrollHalfPageUp" }
+]
