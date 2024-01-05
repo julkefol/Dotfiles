@@ -8,8 +8,9 @@ set $right l
 set $left h
 
 # Terminal emulator
-exec foot --server
-set $term foot
+# exec foot --server
+# set $term foot
+set $term alacritty
 
 # Application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
