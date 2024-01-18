@@ -31,6 +31,4 @@ hide_when_typing = true
 [keyboard]
 bindings = [
 { key = "0", mods = "Control", action = "ResetFontSize" },
-{ key = "j", mods = "Control", action = "ScrollHalfPageDown" },
-{ key = "k", mods = "Control", action = "ScrollHalfPageUp" }
 ]
