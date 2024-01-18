@@ -20,6 +20,6 @@ alias :q='exit'
 alias rm='trash-put'
 alias tsm='transmission-remote'
 
-alias nnn='nnn -d -R'
+alias nnn='nnn -d -R -C'
 
 alias toipe='toipe -n 60 -w top500'

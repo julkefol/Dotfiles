@@ -50,7 +50,7 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 # nnn config
 export NNN_COLORS="2536"
 export NNN_TRASH=1
-export NNN_FCOLORS='c1e2022e026001f7c6d6abc4'
+# export NNN_FCOLORS='c1e2022e026001f7c6d6abc4'
 
 # Run shell-colorscript
 # For more info: https://gitlab.com/dwt1/shell-color-scripts
