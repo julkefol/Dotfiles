@@ -3,8 +3,6 @@ map h navigate previous
 map l navigate next
 map <Left> navigate previous
 map <Right> navigate next
-map J zoom out
-map K zoom in
 
 set font "Ubuntu Nerd Font Regular 15"
 set selection-clipboard clipboard
