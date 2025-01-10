@@ -1,7 +1,3 @@
-import = [
-    "~/.config/alacritty/gruvbox_material_hard_dark.toml",
-]
-shell = { program = "/usr/bin/bash" }
 
 [env]
 TERM = "xterm-256color"
@@ -32,3 +28,11 @@ hide_when_typing = true
 bindings = [
 { key = "0", mods = "Control", action = "ResetFontSize" },
 ]
+
+[general]
+import = [
+    "~/.config/alacritty/gruvbox_material_hard_dark.toml",
+]
+
+[terminal]
+shell = { program = "/usr/bin/bash" }
